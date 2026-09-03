@@ -1,0 +1,11 @@
+import FinalCTA from "../components/FinalCTA";
+
+export default function ContactPage() {
+  return (
+    <>
+      <div className="pt-24 lg:pt-32">
+        <FinalCTA />
+      </div>
+    </>
+  );
+}
