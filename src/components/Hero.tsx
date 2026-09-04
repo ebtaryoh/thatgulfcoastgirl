@@ -45,11 +45,11 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-3 mb-8">
-            <Link to="/listings" className="inline-flex items-center gap-2.5 rounded-full bg-coastal-gold text-ink-deep px-7 py-4 text-sm font-body font-semibold tracking-wide hover:bg-ivory transition-colors shadow-xl shadow-ink-deep/20">
-              Explore Properties <ArrowRight size={16} strokeWidth={2} />
+            <Link to="/buyers" className="inline-flex items-center gap-2.5 rounded-full bg-coastal-gold text-ink-deep px-7 py-4 text-sm font-body font-semibold tracking-wide hover:bg-ivory transition-colors shadow-xl shadow-ink-deep/20">
+              Buy a Home <ArrowRight size={16} strokeWidth={2} />
             </Link>
-            <Link to="/about" className="inline-flex items-center gap-2.5 rounded-full bg-ivory/10 text-ivory border border-ivory/25 px-7 py-4 text-sm font-body font-medium tracking-wide hover:bg-ivory/15 transition-colors backdrop-blur-sm">
-              Work With Amanda
+            <Link to="/sellers" className="inline-flex items-center gap-2.5 rounded-full bg-ivory/10 text-ivory border border-ivory/25 px-7 py-4 text-sm font-body font-medium tracking-wide hover:bg-ivory/15 transition-colors backdrop-blur-sm">
+              Sell a Home
             </Link>
           </div>
 
