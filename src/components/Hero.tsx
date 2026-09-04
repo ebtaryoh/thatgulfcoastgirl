@@ -1,21 +1,31 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 
 export default function Hero() {
   const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const quickFilters = ["Waterfront", "Luxury", "Coastal", "First Home", "Land", "Investment"];
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.6; // Slow down the video playback
+    }
+  }, []);
 
   return (
     <section id="hero" className="relative min-h-[100dvh] flex items-end overflow-hidden" aria-label="Hero">
-      {/* Background image */}
+      {/* Background video */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero-coast.jpg"
-          alt="Florida Gulf Coast aerial view at golden hour"
-          className="w-full h-full object-cover scale-105 animate-[slowZoom_25s_ease-in-out_infinite_alternate]"
-          loading="eager"
+        <video
+          ref={videoRef}
+          src="/videos/herovideo.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink-deep/50 via-ink-deep/30 to-ink-deep/75" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink-deep/20 via-transparent to-ink-deep/30" />
