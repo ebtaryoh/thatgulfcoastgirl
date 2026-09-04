@@ -8,6 +8,7 @@ import ListingsPage from "./pages/ListingsPage";
 import BuyersPage from "./pages/BuyersPage";
 import SellersPage from "./pages/SellersPage";
 import ContactPage from "./pages/ContactPage";
+import PropertyDetailsPage from "./pages/PropertyDetailsPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/buyers" element={<BuyersPage />} />
           <Route path="/sellers" element={<SellersPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/property/:id" element={<PropertyDetailsPage />} />
         </Routes>
       </main>
       <Footer />

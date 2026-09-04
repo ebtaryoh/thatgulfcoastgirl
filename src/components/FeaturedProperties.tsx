@@ -1,126 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Bed, Bath, Maximize, ArrowUpRight, Heart, MapPin } from "lucide-react";
-
-const properties = [
-  {
-    id: 1,
-    name: "Single Family — Hernando Beach",
-    price: "$599,000",
-    beds: 3,
-    baths: 2,
-    sqft: 2210,
-    lot: "7,405 sq.ft.",
-    image: "/images/featured-property.jpg",
-    location: "3342 Turks Cap Drive, Hernando Beach, FL 34607",
-    tags: ["Waterfront", "Active"],
-    status: "For Sale",
-  },
-  {
-    id: 2,
-    name: "Single Family — Spring Hill",
-    price: "$285,000",
-    beds: 2,
-    baths: 2,
-    sqft: 1036,
-    lot: "0.32 ac",
-    image: "/images/hero-coast.jpg",
-    location: "12411 Brookside Street, Spring Hill, FL 34609",
-    tags: ["Coastal", "Active"],
-    status: "For Sale",
-  },
-  {
-    id: 3,
-    name: "Single Family — Spring Hill",
-    price: "$289,900",
-    beds: 3,
-    baths: 2,
-    sqft: 1480,
-    lot: "10,000 sq.ft.",
-    image: "/images/community-crystal.jpg",
-    location: "1185 Macfarlane Avenue, Spring Hill, FL 34608",
-    tags: ["Residential", "Active"],
-    status: "For Sale",
-  },
-  {
-    id: 4,
-    name: "Condo — Island Estates",
-    price: "$415,000",
-    beds: 2,
-    baths: 2,
-    sqft: 1120,
-    lot: "Condo",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80",
-    location: "Island Estates, Clearwater, FL 33767",
-    tags: ["Condo", "Pending"],
-    status: "Pending",
-  },
-  {
-    id: 5,
-    name: "Single Family — Trinity",
-    price: "$725,000",
-    beds: 4,
-    baths: 3,
-    sqft: 2850,
-    lot: "0.45 ac",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80",
-    location: "Trinity, FL 34655",
-    tags: ["Luxury", "Active"],
-    status: "For Sale",
-  },
-  {
-    id: 6,
-    name: "Townhouse — Safety Harbor",
-    price: "$510,000",
-    beds: 3,
-    baths: 2.5,
-    sqft: 1850,
-    lot: "Townhome",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
-    location: "Safety Harbor, FL 34695",
-    tags: ["Townhome", "Active"],
-    status: "For Sale",
-  },
-  {
-    id: 7,
-    name: "Single Family — Dunedin",
-    price: "$649,900",
-    beds: 3,
-    baths: 2,
-    sqft: 1920,
-    lot: "0.2 ac",
-    image: "https://images.unsplash.com/photo-1570129477492-45c003eaa271?auto=format&fit=crop&q=80",
-    location: "Dunedin, FL 34698",
-    tags: ["Coastal", "Sold"],
-    status: "Sold",
-  },
-  {
-    id: 8,
-    name: "Estate — Tarpon Springs",
-    price: "$1,250,000",
-    beds: 5,
-    baths: 4,
-    sqft: 4200,
-    lot: "1.2 ac",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80",
-    location: "Tarpon Springs, FL 34689",
-    tags: ["Estate", "Active"],
-    status: "For Sale",
-  },
-  {
-    id: 9,
-    name: "Condo — Clearwater Beach",
-    price: "$895,000",
-    beds: 2,
-    baths: 2,
-    sqft: 1450,
-    lot: "Condo",
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80",
-    location: "Clearwater Beach, FL 33767",
-    tags: ["Waterfront", "Active"],
-    status: "For Sale",
-  }
-];
+import { properties } from "../data/properties";
 
 export default function FeaturedProperties() {
   const [liked, setLiked] = useState<number[]>([]);
@@ -143,7 +24,7 @@ export default function FeaturedProperties() {
           {properties.map((p, i) => (
             <Link
               key={p.id}
-              to="/contact"
+              to={`/property/${p.id}`}
               className="group block bg-ivory rounded-3xl overflow-hidden shadow-lg shadow-ink-deep/5 border border-parchment/40 hover:shadow-2xl hover:shadow-ink-deep/10 transition-all duration-500 hover:-translate-y-2 card-elevate"
               aria-label={`View ${p.name}`}
               style={{ animationDelay: `${(i % 3) * 100}ms` }}

@@ -46,7 +46,7 @@ export default function BrandStatement() {
           >
             <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl shadow-ink-deep/8 img-zoom">
               <img
-                src="/images/profile-portrait.jpg"
+                src="/images/personal.png"
                 alt="Amanda Crescenzo, Florida Gulf Coast Realtor"
                 className="w-full h-full object-cover"
                 loading="lazy"
